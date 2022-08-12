@@ -3,6 +3,7 @@ import axios from 'axios'
 import NoResults from 'components/NoResults'
 import SearchBar from 'components/SearchBar'
 import ArtistList from 'components/ArtistList'
+import Loader from 'components/Loader'
 import { Wrapper } from './styled'
 
 interface iSearcher {
@@ -67,11 +68,14 @@ const Searcher = ({ token, onInvalidSession, checkIfSessionIsValid }: iSearcher)
       <SearchBar value={searchKey} onSubmit={searchArtists} onChange={handleSearchChange} ref={inputRef} />
 
       <Wrapper>
-        {isLoading && <>Loading...</>}
-
-        <ArtistList artists={artists} />
-
-        {lastSearch && !isLoading && !artists.length && <NoResults query={lastSearch} handleAction={resetSearch} />}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            {!!artists.length && <ArtistList artists={artists} />}
+            {!artists.length && lastSearch && <NoResults query={lastSearch} handleAction={resetSearch} />}
+          </>
+        )}
       </Wrapper>
     </>
   )
