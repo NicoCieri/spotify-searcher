@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 export const Layout = styled.div`
   width: 100%;
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-  background-image: linear-gradient(to right top, #8360c3, #2ebf91);
   background-image: linear-gradient(to right top, #6327cf, #0cdf9c);
   height: 100vh;
   overflow: auto;
