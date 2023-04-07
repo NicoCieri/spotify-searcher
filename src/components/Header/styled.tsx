@@ -12,5 +12,5 @@ export const Title = styled.h1`
   font-size: 2.8rem;
   font-weight: 800;
   margin: 0;
-  color: #222;
+  color: #fff;
 `

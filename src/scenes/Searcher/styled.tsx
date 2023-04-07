@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+
 export const Wrapper = styled.div<{ withTabs?: boolean }>`
   display: flex;
   flex-direction: column;
@@ -7,7 +12,7 @@ export const Wrapper = styled.div<{ withTabs?: boolean }>`
   max-width: 100%;
   min-height: 162px;
   border-radius: ${(props) => (props.withTabs ? '0 10px 10px 10px' : '10px')};
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-right-color: rgba(255, 255, 255, 0.1);

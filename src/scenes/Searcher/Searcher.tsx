@@ -4,7 +4,8 @@ import NoResults from 'components/NoResults'
 import SearchBar from 'components/SearchBar'
 import ArtistList from 'components/ArtistList'
 import Loader from 'components/Loader'
-import { Wrapper } from './styled'
+import { ButtonsWrapper, Wrapper } from './styled'
+import { Button } from 'components/styled'
 
 interface iSearcher {
   token: string
@@ -63,10 +64,22 @@ const Searcher = ({ token, onInvalidSession, checkIfSessionIsValid }: iSearcher)
     setIsLoading(false)
   }
 
+  const clearSearch = () => {
+    setSearchKey('')
+    setLastSearch('')
+    setArtists([])
+    inputRef.current?.focus()
+  }
+
   return (
     <>
       <SearchBar value={searchKey} onSubmit={searchArtists} onChange={handleSearchChange} ref={inputRef} />
 
+      {!!lastSearch.length && !isLoading && (
+        <ButtonsWrapper onClick={clearSearch}>
+          <Button>Clear</Button>
+        </ButtonsWrapper>
+      )}
       <Wrapper>
         {isLoading ? (
           <Loader />
