@@ -2,11 +2,11 @@
 
 This app allows you to search all the spotify artists by name. Clicking on an artists will redirect you to the artists page on Spotify.
 
-You need an Spotify account to use to login. 
+You need an Spotify account to use to login.
 
 In order to run this app localy, you will need to fill in the `REACT_APP_CLIENT_ID` environment variable in the `.env.development` file.
 
-Deployed version [here](https://searchforartists.netlify.app/)
+Deployed version [here](https://searchforartists.netlify.app/).
 
 ## Available Scripts
 
